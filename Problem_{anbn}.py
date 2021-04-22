@@ -1,6 +1,7 @@
 # { a^n b^n | n >= 0 }
 # where a = 0 and b = 1
 from tsmsim import Algorithm
+from tsmsim import generate_words
 
 Algorithm({
     'q_s': {
