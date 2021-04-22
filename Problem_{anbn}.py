@@ -1,31 +1,32 @@
+# { a^n b^n | n >= 0 }
+# where a = 0 and b = 1
 from tsmsim import Algorithm
-from tsmsim import generate_words
 
 Algorithm({
     'q_s': {
         '[]': True,
-        'a': ('#', 'q_1', '->'),
-        'b': False,
+        '0': ('#', 'q_1', '->'),
+        '1': False,
         '*': ('q_c', '->'),
     },
     'q_1': {
-        'a': '->',
+        '0': '->',
         '*': '->',
-        'b': ('*', 'q_b', '<-'),
+        '1': ('*', 'q_b', '<-'),
         '[]': False,
     },
     'q_b': {
-        'a': '<-',
+        '0': '<-',
         '#': ('q_s', '->'),
         '*': '<-',
     },
     'q_c': {
         '*': '->',
-        'a': False,
-        'b': False,
+        '0': False,
+        '1': False,
         '[]': True,
     }
 }).test(
-    generate_words('ab', 10),
+    generate_words('01', 10),
     lambda word: word == '0' * (len(word) // 2) + '1' * (len(word) // 2)
 )
