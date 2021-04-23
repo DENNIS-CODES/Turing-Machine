@@ -1,6 +1,19 @@
 # Turing-Machine
+The Turing machine is not a machine. It is a mathematical model, which was formulated by the English mathematician `Alan Turing` in 1936.
 
 ![image](https://user-images.githubusercontent.com/65861136/115758495-dc8c9a00-a3a7-11eb-8ae6-ade285b02897.png)
+
+# Implementation of a TM in Python
+- We implement a Turing Machine in Python as a class. We define another class for the `read/write` tape of the Turing Machine. The core of the tape inside the class Tape is a `dictionary`, which contains the `entries` of the tape. This way, we can have `negative indices`. A `Python list` is not a convenient `data structure`, because Python lists are bounded on one side, i.e. `bounded by 0`.
+
+- We define the method `__str__(self)` for the `class Tape` .` __str__(self)` is called by the built-in `str()` function. The `print` function uses also the `str` function to calculate the `"informal"` string representation of an object, in our case the tape of the `TM`. The method `get_tape()` of our class TuringMachine makes use of the `str` representation returned by `__str__.`
+
+- With the aid of the method `__getitem__()`, we provide a reading access to the tape via indices. The definition of the method `__setitem__()` allows a writing access as well, as we can see e.g. in the statement
+`self.__tape[self.__head_position] = y[1]`
+of our class TuringMachine implementation.
+
+- The class TuringMachine:
+We define the method `__str__(self)`, which is called by the `str()` built-in function and by the print statement to compute the "informal" string representation of an object, in our case the string representation of a tape
 
 ## Algorithms
 Formally, Turing machine is a tuple of input alphabet, tape alphabet, set of states, transition function, initial state, accepting state, rejecting state and blank symbol. By default,
