@@ -3,6 +3,9 @@ The Turing machine is not a machine. It is a mathematical model, which was formu
 
 ![image](https://user-images.githubusercontent.com/65861136/115758495-dc8c9a00-a3a7-11eb-8ae6-ade285b02897.png)
 
+# Live Implementation
+https://user-images.githubusercontent.com/65861136/116916439-f9518900-ac55-11eb-92f3-bff6c5bcef8f.mp4
+
 # Implementation of a TM in Python
 - We implement a Turing Machine in Python as a class. We define another class for the `read/write` tape of the Turing Machine. The core of the tape inside the class Tape is a `dictionary`, which contains the `entries` of the tape. This way, we can have `negative indices`. A `Python list` is not a convenient `data structure`, because Python lists are bounded on one side, i.e. `bounded by 0`.
 
